@@ -1,35 +1,25 @@
 /*
     ===== Código de TypeScript =====
 */
-
-interface Reproductor {
-    volume: number;
-    second: number;
-    song: string;
-    details: Details
+interface Pasajero {
+    nombre: string;
+    hijos?: string[];
 }
 
-interface Details {
-    author: string;
-    year: number;
+const pasajero: Pasajero = {
+    nombre: "Fernando"
 }
 
-const reproductor: Reproductor = {
-    volume: 90,
-    second: 50,
-    song: "Mess",
-    details: {
-        author: "Ed Sheeran",
-        year: 2020
-    }
+const pasajero1: Pasajero = {
+    nombre: "Melissa",
+    hijos: ['Natalia', "Gabriela"]
 }
 
-const {volume, second, song, details} = reproductor;
-const {author} = details
+function imprimirHijos(pasajeros: Pasajero): void {
+    const cuantosHijos = pasajeros.hijos?.length || 0;
 
-console.log("El volumen actual es de: ", volume)
-console.log("El segundo actual es de: ", second)
-console.log("La cancion actual es de: ", song)
-console.log("El autor es: ", author)
+    console.log(cuantosHijos)
+}
 
 
+imprimirHijos(pasajero)
